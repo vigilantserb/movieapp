@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/myImageView"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/tabTextColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/actor_name_tv"/>
+
+    <TextView
+            android:id="@+id/actor_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tabTextColor"
+            android:textAlignment="center"
+            android:fontFamily="@font/latomedium"
+            app:layout_constraintTop_toBottomOf="@+id/myImageView"
+            app:layout_constraintStart_toStartOf="@+id/myImageView"
+            app:layout_constraintEnd_toEndOf="@+id/myImageView"
+            app:layout_constraintHorizontal_bias="0.5"/>
+
+</android.support.constraint.ConstraintLayout>

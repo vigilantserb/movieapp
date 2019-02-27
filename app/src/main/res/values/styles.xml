@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/tabBackgroundColor</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="tabTextColor">@color/tabTextColor</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- TextAppearance.Design.Tab is the default used in the Design Library -->
+    <style name="TabApperance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/tabTextColor</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@color/tabBackgroundColor</item>
+        <item name="tabIndicatorColor">@color/tabTextColor</item>
+    </style>
+
+    <style name="textStyle">
+        <item name="android:fontFamily">@font/latomedium</item>
+        <item name="android:textColor">@color/tabTextColor</item>
+    </style>
+
+    <style name="textStyleDark">
+        <item name="android:fontFamily">@font/latomedium</item>
+        <item name="android:textColor">#999</item>
+    </style>
+</resources>
