@@ -34,7 +34,6 @@ class ReviewsFragmentViewModel: BaseViewModel() {
             )
     }
 
-
     private fun onRetrieveReviewsError() {
         loadingVisibility.value = View.VISIBLE
         errorMessage.value = R.string.review_error
