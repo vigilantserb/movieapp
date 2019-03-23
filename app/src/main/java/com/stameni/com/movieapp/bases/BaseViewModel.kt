@@ -7,6 +7,7 @@ import com.stameni.com.movieapp.di.module.NetworkModule
 import com.stameni.com.movieapp.ui.movies.MovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.SingleMovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorActivityViewModel
+import com.stameni.com.movieapp.ui.movies.singleMovie.summary.SummaryFragmentViewModel
 
 abstract class BaseViewModel: ViewModel(){
     private val injector: ViewModelInjector = DaggerViewModelInjector
@@ -23,6 +24,7 @@ abstract class BaseViewModel: ViewModel(){
             is MovieViewModel -> injector.inject(this)
             is SingleMovieViewModel -> injector.inject(this)
             is ActorActivityViewModel -> injector.inject(this)
+            is SummaryFragmentViewModel -> injector.inject(this)
         }
     }
 }
