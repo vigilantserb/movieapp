@@ -6,11 +6,8 @@ import android.os.Bundle
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import com.squareup.picasso.Picasso
 import com.stameni.com.movieapp.R
-import com.stameni.com.movieapp.ui.VideoTypeAdapter
-import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_single_movie.*
 
 const val MOVIE_ID = "movie_id"

@@ -4,6 +4,7 @@ import com.stameni.com.movieapp.di.module.NetworkModule
 import com.stameni.com.movieapp.ui.movies.MovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.SingleMovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorActivityViewModel
+import com.stameni.com.movieapp.ui.movies.singleMovie.reviews.ReviewsFragmentViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.summary.SummaryFragmentViewModel
 import dagger.Component
 import javax.inject.Singleton
@@ -16,6 +17,7 @@ interface ViewModelInjector{
     fun inject(singleMovieViewModel: SingleMovieViewModel)
     fun inject(actorActivityViewModel: ActorActivityViewModel)
     fun inject(summaryFragmentViewModel: SummaryFragmentViewModel)
+    fun inject(reviewsFragmentViewModel: ReviewsFragmentViewModel)
 
     @Component.Builder
     interface Builder {

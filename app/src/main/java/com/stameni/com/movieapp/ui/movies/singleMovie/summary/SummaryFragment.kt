@@ -83,6 +83,7 @@ class SummaryFragment : Fragment() {
                 val url = "https://image.tmdb.org/t/p/w500/${movie.backdropPath}"
                 val backgroundUrl = "https://image.tmdb.org/t/p/w500/${movie.posterPath}"
 
+                //TODO add blur effect to background
                 Picasso.get()
                     .load(backgroundUrl)
                     .fit()
