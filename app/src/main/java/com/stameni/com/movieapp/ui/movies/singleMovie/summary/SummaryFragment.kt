@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import com.squareup.picasso.Picasso
 import com.stameni.com.movieapp.R
 import com.stameni.com.movieapp.ui.movies.singleMovie.MOVIE_ID
+import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_single_movie.*
 import kotlinx.android.synthetic.main.fragment_summary.*
 
@@ -86,6 +87,7 @@ class SummaryFragment : Fragment() {
                 //TODO add blur effect to background
                 Picasso.get()
                     .load(backgroundUrl)
+                    .transform(BlurTransformation(activity, 10))
                     .fit()
                     .centerInside()
                     .into(backgroundImage)
