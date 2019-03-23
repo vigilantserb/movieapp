@@ -6,14 +6,11 @@ import android.os.Bundle
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import android.widget.LinearLayout
 import com.squareup.picasso.Picasso
 import com.stameni.com.movieapp.R
-import com.stameni.com.movieapp.models.movieImages.Backdrop
+import com.stameni.com.movieapp.ui.VideoTypeAdapter
 import jp.wasabeef.picasso.transformations.BlurTransformation
-import jp.wasabeef.picasso.transformations.GrayscaleTransformation
 import kotlinx.android.synthetic.main.activity_single_movie.*
 
 const val MOVIE_ID = "movie_id"
@@ -27,6 +24,9 @@ class SingleMovie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_movie)
+
+        viewpager_main.adapter = SingleMovieViewPagerAdapter(supportFragmentManager)
+        tabs_main.setupWithViewPager(viewpager_main)
         movieId = intent!!.extras!!.getInt(MOVIE_ID, 0)
         viewModel = ViewModelProviders.of(this).get(SingleMovieViewModel::class.java)
 
@@ -36,12 +36,11 @@ class SingleMovie : AppCompatActivity() {
         viewModel.loadReviews(movieId)
         viewModel.loadImages(movieId)
 
-        initProgressBar()
         initErrorHandling()
         initCarouselView()
-        initClipRecyclerView()
-        initActorsRecyclerView()
-        initReviewsRecyclerView()
+//        initClipRecyclerView()
+//        initActorsRecyclerView()
+//        initReviewsRecyclerView()
         initFields()
     }
 
@@ -59,16 +58,6 @@ class SingleMovie : AppCompatActivity() {
         })
     }
 
-    private fun initProgressBar() {
-        viewModel.loadingVisibility.observe(this, Observer {
-            if (it == View.VISIBLE) {
-                progressBar.visibility = View.VISIBLE
-            } else {
-                progressBar.visibility = View.GONE
-            }
-        })
-    }
-
     private fun initErrorHandling() {
         viewModel.errorMessage.observe(this, Observer {
             if (it != null)
@@ -78,20 +67,20 @@ class SingleMovie : AppCompatActivity() {
         })
     }
 
-    private fun initClipRecyclerView() {
-        clip_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
-        clip_list_rv.adapter = viewModel.clipListAdapter
-    }
-
-    private fun initActorsRecyclerView() {
-        actor_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
-        actor_list_rv.adapter = viewModel.actorListAdapter
-    }
-
-    private fun initReviewsRecyclerView() {
-        review_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-        review_list_rv.adapter = viewModel.movieReviewsAdapter
-    }
+//    private fun initClipRecyclerView() {
+//        clip_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
+//        clip_list_rv.adapter = viewModel.clipListAdapter
+//    }
+//
+//    private fun initActorsRecyclerView() {
+//        actor_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
+//        actor_list_rv.adapter = viewModel.actorListAdapter
+//    }
+//
+//    private fun initReviewsRecyclerView() {
+//        review_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
+//        review_list_rv.adapter = viewModel.movieReviewsAdapter
+//    }
 
     private fun initFields() {
         viewModel.singleMovie.observe(this, Observer { movie ->
@@ -100,31 +89,31 @@ class SingleMovie : AppCompatActivity() {
                 movie.genres.forEach {
                     genre += it.name + " | "
                 }
-                title_tv.text = movie.originalTitle
-                movie_summary.text = movie.overview
-                rating_tv.text = movie.voteAverage.toString()
-                release_date_tv.text = movie.releaseDate
-                genres.text = " | $genre"
+//                title_tv.text = movie.originalTitle
+//                movie_summary.text = movie.overview
+//                rating_tv.text = movie.voteAverage.toString()
+//                release_date_tv.text = movie.releaseDate
+//                genres.text = " | $genre"
                 val url = "https://image.tmdb.org/t/p/w500/${movie.backdropPath}"
                 val backgroundUrl = "https://image.tmdb.org/t/p/w500/${movie.posterPath}"
 
-                Picasso.get()
-                    .load(backgroundUrl)
-                    .transform(BlurTransformation(this, 10))
-                    .fit()
-                    .centerInside()
-                    .into(backgroundImage)
+//                Picasso.get()
+//                    .load(backgroundUrl)
+//                    .transform(BlurTransformation(this, 10))
+//                    .fit()
+//                    .centerInside()
+//                    .into(backgroundImage)
             }
         })
 
-        viewModel.reviewsVisibility.observe(this, Observer {
-            if (it != null) {
-                if (it == View.GONE) {
-                    review_list_rv.visibility = View.GONE
-                    review_tv.visibility = View.GONE
-                }
-            }
-        })
+//        viewModel.reviewsVisibility.observe(this, Observer {
+//            if (it != null) {
+//                if (it == View.GONE) {
+//                    review_list_rv.visibility = View.GONE
+//                    review_tv.visibility = View.GONE
+//                }
+//            }
+//        })
     }
 
     private fun showError(@StringRes errorMessage: Int) {
