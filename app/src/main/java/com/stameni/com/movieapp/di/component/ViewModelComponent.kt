@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [NetworkModule::class])
 interface ViewModelComponent{
-
     fun inject(moviesViewModel: MovieViewModel)
     fun inject(singleMovieViewModel: SingleMovieViewModel)
     fun inject(actorActivityViewModel: ActorActivityViewModel)
@@ -22,11 +21,4 @@ interface ViewModelComponent{
     fun inject(reviewsFragmentViewModel: ReviewsFragmentViewModel)
     fun inject(clipsFragmentViewModel: ClipsFragmentViewModel)
     fun inject(activityFragmentViewModel: ActorsFragmentViewModel)
-
-    @Component.Builder
-    interface Builder {
-        fun build(): ViewModelComponent
-
-        fun networkModule(networkModule: NetworkModule): Builder
-    }
 }
