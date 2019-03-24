@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [NetworkModule::class])
-interface ViewModelInjector{
+interface ViewModelComponent{
 
     fun inject(moviesViewModel: MovieViewModel)
     fun inject(singleMovieViewModel: SingleMovieViewModel)
@@ -25,7 +25,7 @@ interface ViewModelInjector{
 
     @Component.Builder
     interface Builder {
-        fun build(): ViewModelInjector
+        fun build(): ViewModelComponent
 
         fun networkModule(networkModule: NetworkModule): Builder
     }

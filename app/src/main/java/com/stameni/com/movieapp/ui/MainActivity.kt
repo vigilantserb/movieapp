@@ -1,9 +1,9 @@
-package com.stameni.com.movieapp
+package com.stameni.com.movieapp.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
-import com.stameni.com.movieapp.ui.VideoTypeAdapter
+import com.stameni.com.movieapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
