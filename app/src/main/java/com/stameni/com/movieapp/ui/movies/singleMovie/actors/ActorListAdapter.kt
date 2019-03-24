@@ -46,6 +46,7 @@ class ActorListAdapter : RecyclerView.Adapter<ActorListAdapter.ViewHolder>() {
             Picasso.get()
                 .load(url)
                 .fit()
+                .placeholder(R.color.tabTextColor)
                 .centerCrop().into(itemView.myImageView)
         }
     }

@@ -76,7 +76,7 @@ class SingleMovie : AppCompatActivity() {
 //
 //    private fun initReviewsRecyclerView() {
 //        review_list_rv.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
-//        review_list_rv.adapter = viewModel.movieReviewsAdapter
+//        review_list_rv.adapter = viewModel.actorListAdapter
 //    }
 
     private fun initFields() {

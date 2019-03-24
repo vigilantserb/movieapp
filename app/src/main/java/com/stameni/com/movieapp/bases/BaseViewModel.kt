@@ -6,6 +6,7 @@ import com.stameni.com.movieapp.di.component.ViewModelInjector
 import com.stameni.com.movieapp.di.module.NetworkModule
 import com.stameni.com.movieapp.ui.movies.MovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.SingleMovieViewModel
+import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorsFragmentViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorActivityViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.clips.ClipsFragmentViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.reviews.ReviewsFragmentViewModel
@@ -29,6 +30,7 @@ abstract class BaseViewModel: ViewModel(){
             is SummaryFragmentViewModel -> injector.inject(this)
             is ReviewsFragmentViewModel -> injector.inject(this)
             is ClipsFragmentViewModel -> injector.inject(this)
+            is ActorsFragmentViewModel -> injector.inject(this)
         }
     }
 }

@@ -3,6 +3,7 @@ package com.stameni.com.movieapp.di.component
 import com.stameni.com.movieapp.di.module.NetworkModule
 import com.stameni.com.movieapp.ui.movies.MovieViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.SingleMovieViewModel
+import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorsFragmentViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.actors.ActorActivityViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.clips.ClipsFragmentViewModel
 import com.stameni.com.movieapp.ui.movies.singleMovie.reviews.ReviewsFragmentViewModel
@@ -20,6 +21,7 @@ interface ViewModelInjector{
     fun inject(summaryFragmentViewModel: SummaryFragmentViewModel)
     fun inject(reviewsFragmentViewModel: ReviewsFragmentViewModel)
     fun inject(clipsFragmentViewModel: ClipsFragmentViewModel)
+    fun inject(activityFragmentViewModel: ActorsFragmentViewModel)
 
     @Component.Builder
     interface Builder {
